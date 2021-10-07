@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.5",
         "livewire-ui/modal": "^1.0",
         "livewire/livewire": "^2.6",
+        "magarrent/laravel-currency-formatter": "^1.0",
         "rappasoft/laravel-livewire-tables": "^1.16"
     },
     "require-dev": {

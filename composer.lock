@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4f7b310c8ce3d361f6f7d4305c606c6",
+    "content-hash": "2e92f19485ddd2bce06e97932e20704e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1775,6 +1775,68 @@
                 }
             ],
             "time": "2021-09-25T22:50:47+00:00"
+        },
+        {
+            "name": "magarrent/laravel-currency-formatter",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magarrent/laravel-currency-formatter.git",
+                "reference": "7bf62b91f6780087d5f11e68e3d79246d2d115ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magarrent/laravel-currency-formatter/zipball/7bf62b91f6780087d5f11e68e3d79246d2d115ec",
+                "reference": "7bf62b91f6780087d5f11e68e3d79246d2d115ec",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^7.0|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Magarrent\\LaravelCurrencyFormatter\\LaravelCurrencyFormatterServiceProvider"
+                    ],
+                    "aliases": {
+                        "Currency": "Magarrent\\LaravelCurrencyFormatter\\Facades\\Currency"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Magarrent\\LaravelCurrencyFormatter\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Garcia Torrent (Kodio Technologies)",
+                    "email": "magarrent@gmail.com"
+                }
+            ],
+            "description": "Tiny Laravel worldwide currency formatter",
+            "keywords": [
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/magarrent/laravel-currency-formatter/issues",
+                "source": "https://github.com/magarrent/laravel-currency-formatter/tree/1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/magarrent",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-08-23T10:03:51+00:00"
         },
         {
             "name": "monolog/monolog",
