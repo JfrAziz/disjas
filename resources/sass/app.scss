@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://css.gg/css');
+
+.anchor-button {
+  @apply font-bold py-2 px-4 ml-2 rounded no-underline focus:outline-none focus:ring disabled:opacity-25 transition uppercase text-xs tracking-wider flex items-center
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* width */
+.scroll-style::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+.scroll-style::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scroll-style::-webkit-scrollbar-thumb {
+  background: #aeaec2;
+}
+
+/* Handle on hover */
+.scroll-style::-webkit-scrollbar-thumb:hover {
+  background: #cacaca;
+}

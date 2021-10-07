@@ -1,0 +1,62 @@
+version: "3.8"
+
+networks:
+  nginx_network:
+    external: true
+  laravel_disjas:
+    name: laravel_disjas
+
+services:
+  nginx:
+    image: "nginx:latest"
+    container_name: nginx_disjas
+    working_dir: "/var/www/html"
+    volumes:
+        - "./:/var/www/html"
+        - "./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+    depends_on:
+        - php
+    networks:
+      - nginx_network
+      - laravel_disjas
+
+  php:
+    build:
+      context: .docker/php
+      dockerfile: Dockerfile
+      args:
+        - PHPUSER=${PHPUSER:-www-data}
+        - PHPGROUP=${PHPGROUP:-www-data}
+    container_name: php
+    working_dir: "/var/www/html"
+    volumes:
+      - "./:/var/www/html"
+    networks:
+      - laravel_disjas
+
+  composer:
+    image: "composer:latest"
+    container_name: composer
+    working_dir: "/var/www/html"
+    volumes:
+      - "./:/var/www/html"
+    depends_on:
+      - php
+    entrypoint: ["composer", "--ignore-platform-reqs"]
+    networks:
+      - laravel_disjas
+
+  artisan:
+    build:
+      context: .docker/php
+      dockerfile: Dockerfile
+      args:
+        - PHPUSER=${PHPUSER:-www-data}
+        - PHPGROUP=${PHPGROUP:-www-data}
+    container_name: artisan
+    volumes:
+      - ./:/var/www/html:delegated
+    working_dir: /var/www/html
+    entrypoint: ["php", "/var/www/html/artisan"]
+    networks:
+      - laravel_disjas

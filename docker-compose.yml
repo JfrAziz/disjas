@@ -1,0 +1,60 @@
+version: "3.1"
+
+networks:
+    laravel:
+
+services:
+    nginx:
+        image: "nginx:latest"
+        container_name: nginx
+        working_dir: "/var/www/html"
+        volumes:
+            - "./:/var/www/html"
+            - "./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+        ports:
+            - "8080:80"
+        depends_on:
+            - php
+        networks:
+            - laravel
+
+    php:
+        build:
+            context: .docker/php
+            dockerfile: Dockerfile
+            args:
+                - PHPUSER=${PHPUSER:-www-data}
+                - PHPGROUP=${PHPGROUP:-www-data}
+        container_name: php
+        working_dir: "/var/www/html"
+        volumes:
+            - "./:/var/www/html"
+        networks:
+            - laravel
+
+    composer:
+        image: "composer:latest"
+        container_name: composer
+        working_dir: "/var/www/html"
+        volumes:
+            - "./:/var/www/html"
+        depends_on:
+            - php
+        entrypoint: ["composer", "--ignore-platform-reqs"]
+        networks:
+            - laravel
+
+    artisan:
+        build:
+            context: .docker/php
+            dockerfile: Dockerfile
+            args:
+                - PHPUSER=${PHPUSER:-www-data}
+                - PHPGROUP=${PHPGROUP:-www-data}
+        container_name: artisan
+        volumes:
+            - ./:/var/www/html:delegated
+        working_dir: /var/www/html
+        entrypoint: ["php", "/var/www/html/artisan"]
+        networks:
+            - laravel
