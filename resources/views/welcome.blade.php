@@ -5,7 +5,7 @@
                 <div class="mr-2">
                     <i class="gg-math-plus" style="--ggs: 0.6;"></i>
                 </div>
-                <span>publikasi</span>
+                <span>data</span>
             </x-button.black>
         @endslot
         <div>

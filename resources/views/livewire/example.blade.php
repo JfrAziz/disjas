@@ -4,7 +4,7 @@
         <x-modal.body>
             <x-input.wrapper>
                 <x-input.label for="password" value="Confirm Your password" />
-                <x-input.text type="password" id="password" name="password" wire:model="password"
+                <x-input.text type="password" id="password" name="password"
                     placeholder="your password" />
                 <x-input.error for="password" />
             </x-input.wrapper>

@@ -4,6 +4,8 @@
 
 @import url('https://css.gg/css');
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
 .anchor-button {
   @apply font-bold py-2 px-4 ml-2 rounded no-underline focus:outline-none focus:ring disabled:opacity-25 transition uppercase text-xs tracking-wider flex items-center
 }
