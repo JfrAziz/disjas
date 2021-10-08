@@ -4,6 +4,21 @@ let chartDom = document.getElementById("chart-container");
 let myChart = echarts.init(chartDom);
 let currentData = new Array(12).fill(0);
 
+const monthsColor = {
+    Januari: "#CFC3C2",
+    Februari: "#FC6AE6",
+    Maret: "#99515C",
+    April: "#C489B4",
+    Mei: "#99486B",
+    Juni: "#CCB1BE",
+    Juli: "#E84D69",
+    Agustus: "#B872AB",
+    September: "#B52269",
+    Oktober: "#E66CBB",
+    November: "#F05446",
+    Desember: "#D14030",
+};
+
 let option = {
     tooltip: {
         trigger: "axis",
@@ -33,13 +48,18 @@ let option = {
         inverse: true,
         animationDuration: 300,
         animationDurationUpdate: 300,
-        max: 11, 
+        max: 11,
     },
     series: [
         {
             realtimeSort: true,
             type: "bar",
             data: currentData,
+            itemStyle: {
+                color: function (param) {
+                    return monthsColor[param.name] || "#000";
+                },
+            },
             label: {
                 show: true,
                 position: "right",
@@ -77,7 +97,7 @@ resetRace = function () {
 };
 
 runRace = function (jsonData) {
-    let currentChartID = myChart.id
+    let currentChartID = myChart.id;
     let startYear = new Date(jsonData[0].month).getFullYear();
     let lastYear = new Date(jsonData[jsonData.length - 1].month).getFullYear();
 

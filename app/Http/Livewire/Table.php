@@ -4,12 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Import;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
 use Magarrent\LaravelCurrencyFormatter\Facades\Currency;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use Rappasoft\LaravelLivewireTables\Views\Filter;
 
 class Table extends DataTableComponent
 {
@@ -41,7 +38,11 @@ class Table extends DataTableComponent
                 ->sortable()
                 ->format(function ($value) {
                     return $value->format('M Y');
-                })
+                }),
+            Column::make('action')
+                ->format(function ($value, $column, $row) {
+                    return view('column.actions')->with('import', $row);
+                }),
         ];
     }
 
