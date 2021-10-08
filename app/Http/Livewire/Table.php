@@ -16,6 +16,9 @@ class Table extends DataTableComponent
     public array $perPageAccepted = [25, 50, 100];
     public bool $showSearch = false;
 
+    public string $defaultSortColumn = 'month';
+    public string $defaultSortDirection = 'desc';
+
     public function columns(): array
     {
         return [
