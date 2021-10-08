@@ -13,6 +13,10 @@ class Import extends Model
 
     protected $dates = ['month'];
 
+    protected $casts = [
+        'month' => 'date:Y-m',
+    ];
+
     protected $fillable = [
         'migas', 'non_migas', 'total', 'month'
     ];
