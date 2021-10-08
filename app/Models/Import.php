@@ -17,6 +17,7 @@ class Import extends Model
         'month' => 'date:Y-m-d',
         'migas' => 'integer',
         'non_migas' => 'integer',
+        'import' => 'integer',
         'total' => 'integer'
     ];
 

@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-gray-100">
-    <div class="font-sans text-gray-900 antialiased container mx-auto py-10">
+    <div class="font-sans text-gray-900 antialiased container mx-auto py-5">
         {{ $slot }}
     </div>
     @livewire('livewire-ui-modal')

@@ -2,12 +2,13 @@
     <form wire:submit.prevent="handleForm">
         <x-modal.header title="Delete User" />
         <x-modal.body>
-            <x-input.wrapper>
+            {{-- <x-input.wrapper>
                 <x-input.label for="password" value="Confirm Your password" />
                 <x-input.text type="password" id="password" name="password"
                     placeholder="your password" />
                 <x-input.error for="password" />
-            </x-input.wrapper>
+            </x-input.wrapper> --}}
+            just modal
 
         </x-modal.body>
         <x-modal.footer bordered>

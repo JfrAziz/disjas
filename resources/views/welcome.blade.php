@@ -1,6 +1,9 @@
 <x-app-layout>
-    <x-card title="Chart">
-        <div id="main" class="w-full h-screen"></div>
+    <x-card title="Impor Jawa Timur">
+        @slot('aside')
+            @livewire('bar-race')
+        @endslot
+        <div id="chart-container" class="w-full" style="height: 800px"></div>
     </x-card>
     <x-separator />
     <x-card title="Data">
@@ -14,8 +17,4 @@
         @endslot
         @livewire('table')
     </x-card>
-    <script src="{{ mix('js/bar-race.js') }}"></script>
-    <script>
-        runRace(@json(\App\Models\Import::all()))
-    </script>
 </x-app-layout>
