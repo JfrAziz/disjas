@@ -21,9 +21,9 @@ class BarRace extends Component
 
     public function updated()
     {
-        $this->emit('stopChart');
         $select = "{$this->column} as import, month";
-        $this->data = Import::selectRaw($select)->get();
+        $data = Import::selectRaw($select)->get();
+        $this->dispatchBrowserEvent('reset-chart', ['data' => json_encode($data), 'attribute' => $this->column]);
     }
 
     public function render()

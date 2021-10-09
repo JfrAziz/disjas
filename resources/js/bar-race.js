@@ -57,13 +57,14 @@ let option = {
             data: currentData,
             itemStyle: {
                 color: function (param) {
-                    return monthsColor[param.name] || "#000";
+                    return monthsColor[param.name] || "#CFC3C2";
                 },
             },
             label: {
                 show: true,
                 position: "right",
                 valueAnimation: true,
+                formatter: '$ {c}'
             },
         },
     ],
@@ -96,7 +97,7 @@ resetRace = function () {
     myChart = echarts.init(chartDom);
 };
 
-runRace = function (jsonData) {
+runRace = function (jsonData, attribute) {
     let currentChartID = myChart.id;
     let startYear = new Date(jsonData[0].month).getFullYear();
     let lastYear = new Date(jsonData[jsonData.length - 1].month).getFullYear();
@@ -115,7 +116,7 @@ runRace = function (jsonData) {
             .filter((item) => item.month.includes(year))
             .map((item) => item.import);
         option.series[0].data = source;
-        option.graphic.elements[0].style.text = year;
+        option.graphic.elements[0].style.text = `${attribute} ${year}`;
         myChart.setOption(option);
     }
 };

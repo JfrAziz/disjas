@@ -7,16 +7,14 @@
             @endforeach
         </select>
     </div>
-    @push('scripts')
-        <script src="{{ mix('js/bar-race.js') }}"></script>
-        <script>
-            runRace(@json($data))
-        </script>
-        <script>
-            Livewire.on("stopChart", () => {
-                resetRace()
-                runRace(@json($data))
-            })
-        </script>
-    @endpush
+    <script src="{{ mix('js/bar-race.js') }}" defer></script>
+    <script>
+        window.addEventListener('load',  () => {
+            runRace(@json($data), '{{ $column }}')
+        })
+        window.addEventListener('reset-chart', (event) => {
+            resetRace()
+            runRace(JSON.parse(event.detail.data), event.detail.attribute)
+        })
+    </script>
 </div>
