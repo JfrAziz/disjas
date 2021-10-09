@@ -27,7 +27,7 @@ services:
       args:
         - PHPUSER=${PHPUSER:-www-data}
         - PHPGROUP=${PHPGROUP:-www-data}
-    container_name: php
+    container_name: php_disjas
     working_dir: "/var/www/html"
     volumes:
       - "./:/var/www/html"
@@ -36,7 +36,8 @@ services:
 
   composer:
     image: "composer:latest"
-    container_name: composer
+    container_name: composer_disjas
+    profiles: ["tools"]
     working_dir: "/var/www/html"
     volumes:
       - "./:/var/www/html"
@@ -53,7 +54,8 @@ services:
       args:
         - PHPUSER=${PHPUSER:-www-data}
         - PHPGROUP=${PHPGROUP:-www-data}
-    container_name: artisan
+    container_name: artisan_disjas
+    profiles: ["tools"]
     volumes:
       - ./:/var/www/html:delegated
     working_dir: /var/www/html
