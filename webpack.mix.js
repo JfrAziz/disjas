@@ -16,7 +16,7 @@ mix.disableNotifications();
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/livewire-handler.js', 'public/js')
-    .js('resources/js/bar-race.js', 'public/js')
+    .js('resources/js/chart.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,

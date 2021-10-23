@@ -7,7 +7,6 @@
             @endforeach
         </select>
     </div>
-    <script src="{{ mix('js/bar-race.js') }}" defer></script>
     <script>
         window.addEventListener('load',  () => {
             runRace(@json($data), '{{ $column }}')

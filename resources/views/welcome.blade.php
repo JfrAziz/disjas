@@ -1,4 +1,5 @@
 <x-app-layout>
+    <script src="{{ mix('js/chart.js') }}" defer></script>
     <x-card>
         <div class="md:flex md:items-center md:justify-between text-gray-700">
             <div class="text-xl font-bold ">
@@ -14,8 +15,17 @@
         @slot('aside')
             @livewire('bar-race')
         @endslot
-        <div id="chart-container" class="w-full" style="height: 800px"></div>
+        <div id="chart-race-container" class="w-full" style="height: 800px"></div>
     </x-card>
+    <x-separator />
+    <x-card>
+        <div id="chart-line-container" class="w-full" style="height: 800px"></div>
+    </x-card>
+    <script>
+        window.addEventListener('load',  () => {
+            runLineChart(@json(\App\Models\Import::all()))
+        })
+    </script>
     <x-separator />
     <x-card title="Data">
         @slot('aside')
