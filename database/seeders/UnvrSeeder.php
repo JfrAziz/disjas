@@ -20,10 +20,12 @@ class UnvrSeeder extends Seeder
         while (($data = fgetcsv($csvFile, 2000, ",")) !== FALSE) {
             if (!$firstline) {
                 Unvr::create([
-                    "tanggal" => $data['0'],
-                    "unvr" => $data['1'],
-                    "rasio" => $data['2'],
-                    "spesimen" => $data['3']
+                    "tanggal" => $data['1'],
+                    "unvr" => $data['2'],
+                    "rasio" => $data['3'],
+                    "spesimen" => $data['4'],
+                    "reg_unvr" => $data['5'],
+                    "reg_rasio" => $data['6'],
                 ]);    
             }
             $firstline = false;

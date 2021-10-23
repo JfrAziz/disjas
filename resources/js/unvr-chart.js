@@ -53,7 +53,15 @@ runLineChart = function (jsonData) {
             },
             {
                 type: "line",
-                name: "rasio",
+                name: "model unvr",
+                encode: {
+                    x: "tanggal",
+                    y: "reg_unvr",
+                },
+            },
+            {
+                type: "line",
+                name: "rasio kasus baru / spesimen",
                 yAxisIndex: 1,
                 smooth: true,
                 endLabel: {
@@ -73,6 +81,15 @@ runLineChart = function (jsonData) {
                     y: "rasio",
                     itemName: "tanggal",
                     tooltip: ["rasio"],
+                },
+            },
+            {
+                type: "line",
+                name: "model rasio kasus baru / spesimen",
+                yAxisIndex: 1,
+                encode: {
+                    x: "tanggal",
+                    y: "reg_rasio",
                 },
             },
         ],
