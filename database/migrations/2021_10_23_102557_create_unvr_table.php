@@ -19,6 +19,8 @@ class CreateUnvrTable extends Migration
             $table->decimal('rasio', 8, 2);
             $table->bigInteger('spesimen');
             $table->date('tanggal');
+            $table->decimal('reg_unvr', 8, 2);
+            $table->decimal('reg_rasio', 8, 2);
             $table->timestamps();
         });
     }
