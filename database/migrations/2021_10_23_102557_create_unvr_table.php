@@ -15,8 +15,8 @@ class CreateUnvrTable extends Migration
     {
         Schema::create('unvr', function (Blueprint $table) {
             $table->id();
-            $table->float('unvr', 8, 2);
-            $table->float('rasio', 8, 2);
+            $table->decimal('unvr', 8, 2);
+            $table->decimal('rasio', 8, 2);
             $table->bigInteger('spesimen');
             $table->date('tanggal');
             $table->timestamps();

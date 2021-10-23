@@ -97,8 +97,6 @@ let barRaceOption = {
 resetRace = function () {
     barRace.dispose();
     barRace = echarts.init(chartRaceContainer);
-    lineRace.dispose()
-    lineRace = echarts.init(chartLineContainer)
 };
 
 runRace = function (jsonData, attribute) {
