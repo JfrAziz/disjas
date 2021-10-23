@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Home;
 
 use App\Models\Import;
 use Livewire\Component;
@@ -28,6 +28,6 @@ class BarRace extends Component
 
     public function render()
     {
-        return view('livewire.bar-race');
+        return view('livewire.home.bar-race');
     }
 }

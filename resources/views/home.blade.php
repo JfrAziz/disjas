@@ -13,7 +13,7 @@
     <x-separator />
     <x-card title="Impor Jawa Timur">
         @slot('aside')
-            @livewire('bar-race')
+            @livewire('home.bar-race')
         @endslot
         <div id="chart-race-container" class="w-full" style="height: 800px"></div>
     </x-card>
@@ -36,6 +36,6 @@
                 <span>data</span>
             </x-button.black>
         @endslot
-        @livewire('table')
+        @livewire('home.table')
     </x-card>
 </x-app-layout>

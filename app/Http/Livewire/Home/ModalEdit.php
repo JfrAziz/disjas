@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Home;
 
 use App\Models\Import;
 use Carbon\Carbon;
@@ -48,6 +48,6 @@ class ModalEdit extends ModalComponent
 
     public function render()
     {
-        return view('livewire.modal-edit');
+        return view('livewire.home.modal-edit');
     }
 }
