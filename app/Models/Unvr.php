@@ -15,6 +15,8 @@ class Unvr extends Model
 
     protected $casts = [
         'tanggal' => 'date:Y-m-d',
+        'unvr' => 'decimal:2',
+        'rasio' => 'decimal:2',
         'spesimen' => 'integer',
     ];
 

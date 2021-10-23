@@ -14,6 +14,16 @@
         </div>
     </x-card>
     <x-separator />
+    <script src="{{ mix('js/unvr-chart.js') }}" defer></script>
+    <x-card title="grafik model">
+        <div id="chart-line-container" class="w-full" style="height: 800px"></div>
+    </x-card>
+    <script>
+        window.addEventListener('load',  () => {
+            runLineChart(@json(\App\Models\Unvr::all()))
+        })
+    </script>
+    <x-separator />
     <x-card title="Rata-rata mingguan">
         @livewire('kelompok.table')
     </x-card>
