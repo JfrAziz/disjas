@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="Impor Jawa Timur - Jafar Husaini Aziz">
     <script src="{{ mix('js/chart.js') }}" defer></script>
     <x-card>
         <div class="md:flex md:items-center md:justify-between text-gray-700">

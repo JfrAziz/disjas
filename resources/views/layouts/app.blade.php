@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Impor Jawa Timur - Jafar Husaini Aziz</title>
+    <title>{{ $title }}</title>
     <meta name="description" content="Cuma gabut doang sih, buat ginian">
 
     <!-- Styles -->
