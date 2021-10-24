@@ -18,26 +18,23 @@ runLineChart = function (jsonData) {
         },
         yAxis: [
             {
-                name: 'Harga Saham UNVR'
+                name: "Harga Saham UNVR",
             },
             {
-                name: 'Rasio Kasus Baru / Spesimen'
-            }
+                name: "Rasio Kasus Baru / Spesimen",
+            },
         ],
         dataset: {
             source: jsonData,
+        },
+        legend: {
+            bottom: 5,
         },
         series: [
             {
                 type: "line",
                 name: "unvr",
                 smooth: true,
-                endLabel: {
-                    show: true,
-                    formatter: function (params) {
-                        return `Harga Saham UNVR : ${params.data.unvr}`;
-                    },
-                },
                 labelLayout: {
                     moveOverlap: "shiftY",
                 },
@@ -54,6 +51,18 @@ runLineChart = function (jsonData) {
             {
                 type: "line",
                 name: "model unvr",
+                symbolSize: 0.1,
+                symbol: "circle",
+                lineStyle: {
+                    width: 1,
+                    type: "dashed",
+                },
+                endLabel: {
+                    show: true,
+                    formatter: function (params) {
+                        return `Y = 7061.517 -104.272X`;
+                    },
+                },
                 encode: {
                     x: "tanggal",
                     y: "reg_unvr",
@@ -64,12 +73,6 @@ runLineChart = function (jsonData) {
                 name: "rasio kasus baru / spesimen",
                 yAxisIndex: 1,
                 smooth: true,
-                endLabel: {
-                    show: true,
-                    formatter: function (params) {
-                        return `Rasio Kasus Baru / Spesimen : ${params.data.rasio}`;
-                    },
-                },
                 labelLayout: {
                     moveOverlap: "shiftY",
                 },
@@ -86,7 +89,19 @@ runLineChart = function (jsonData) {
             {
                 type: "line",
                 name: "model rasio kasus baru / spesimen",
+                symbolSize: 0.1,
+                symbol: "circle",
                 yAxisIndex: 1,
+                endLabel: {
+                    show: true,
+                    formatter: function (params) {
+                        return `Y = 11.711 -0.097X`;
+                    },
+                },
+                lineStyle: {
+                    width: 1,
+                    type: "dashed",
+                },
                 encode: {
                     x: "tanggal",
                     y: "reg_rasio",
@@ -95,4 +110,8 @@ runLineChart = function (jsonData) {
         ],
     };
     lineRace.setOption(lineRaceOption);
+};
+
+window.onresize = function () {
+    lineRace.resize();
 };

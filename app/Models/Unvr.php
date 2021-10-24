@@ -26,4 +26,8 @@ class Unvr extends Model
         'rasio', 'tanggal', 'unvr', 'spesimen', 'reg_unvr', 'reg_rasio'
     ];
 
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
+
 }
