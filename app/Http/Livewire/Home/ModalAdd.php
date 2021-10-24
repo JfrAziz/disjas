@@ -29,7 +29,7 @@ class ModalAdd extends ModalComponent
             'month' => Carbon::parse($lastImport->month)->addMonthsNoOverflow()
         ]);
 
-        $this->emit('reloadTable', 'table');
+        $this->emit('reloadTable', 'home.table');
         return $this->emit('closeModal');
     }
 

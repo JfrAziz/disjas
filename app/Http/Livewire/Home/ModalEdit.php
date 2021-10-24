@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Home;
 
 use App\Models\Import;
-use Carbon\Carbon;
 use LivewireUI\Modal\ModalComponent;
 
 class ModalEdit extends ModalComponent
@@ -35,14 +34,14 @@ class ModalEdit extends ModalComponent
         $this->import->total = $this->import->migas + $this->import->non_migas;
         $this->import->save();
 
-        $this->emit('reloadTable', 'table');
+        $this->emit('reloadTable', 'home.table');
         return $this->emit('closeModal');
     }
 
     public function delete()
     {
         $this->import->delete();
-        $this->emit('reloadTable', 'table');
+        $this->emit('reloadTable', 'home.table');
         return $this->emit('closeModal');
     }
 

@@ -29,7 +29,7 @@
     <x-separator />
     <x-card title="Data">
         @slot('aside')
-            <x-button.black onclick="Livewire.emit('openModal', 'modal-add')">
+            <x-button.black onclick="Livewire.emit('openModal', 'home.modal-add')">
                 <div class="mr-2">
                     <i class="gg-math-plus" style="--ggs: 0.6;"></i>
                 </div>

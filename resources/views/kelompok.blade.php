@@ -10,6 +10,14 @@
     </script>
     <x-separator />
     <x-card title="Rata-rata mingguan">
+        @slot('aside')
+            <x-button.black onclick="Livewire.emit('openModal', 'kelompok.modal-add')">
+                <div class="mr-2">
+                    <i class="gg-math-plus" style="--ggs: 0.6;"></i>
+                </div>
+                <span>data</span>
+            </x-button.black>
+        @endslot
         @livewire('kelompok.table')
     </x-card>
     <x-separator />

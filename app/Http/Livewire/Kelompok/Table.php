@@ -29,7 +29,11 @@ class Table extends DataTableComponent
             Column::make('rasio kasus baru', 'rasio')
                 ->sortable(),
             Column::make('spesimen', 'spesimen')
-                ->sortable()
+                ->sortable(),
+            Column::make('action')
+                ->format(function ($value, $column, $row) {
+                    return view('column.actions-unvr')->with('unvr', $row);
+                }),
         ];
     }
 
