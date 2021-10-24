@@ -1,6 +1,6 @@
 <div>
     <form wire:submit.prevent="handleForm">
-        <x-modal.header title="Tambah Data Impor Bulan Terakhir" />
+        <x-modal.header title="Tambah Data" />
         <x-modal.body>
             <x-input.wrapper>
                 <x-input.label for="unvr" value="Harga Saham UNVR" />

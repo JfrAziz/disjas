@@ -11,7 +11,7 @@
         </div>
     </x-card>
     <x-separator />
-    <x-card title="Impor Jawa Timur">
+    <x-card title="Impor Jawa Timur 2007 - 2021">
         @slot('aside')
             @livewire('home.bar-race')
         @endslot
